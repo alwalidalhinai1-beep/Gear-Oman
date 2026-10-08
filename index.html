@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="جير: تأجير بلايستيشن 5 وإكس بوكس ونينتندو سويتش ويدّات ونظارات VR وملحقات الألعاب بالأيام في سلطنة عُمان.">
+<meta property="og:title" content="جير – تأجير مستلزمات الألعاب في عُمان">
+<meta property="og:description" content="استأجر أجهزة الألعاب والملحقات بالأيام: بلايستيشن 5، إكس بوكس، سويتش، VR.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E8334F">
+<title>جير – تأجير مستلزمات الألعاب</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0FF;--sf:#fff;--tx:#1B1747;--mu:#6B678F;--ac:#E8334F;--ac2:#1AA7B5;--ln:#DDD9F5;--ok:#1E9E62}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15122E;--sf:#201B47;--tx:#F1EFFF;--mu:#A29EC9;--ac:#FF5B77;--ac2:#46D3E0;--ln:#37306B;--ok:#4BD28F}}
+:root[data-theme="dark"]{--bg:#15122E;--sf:#201B47;--tx:#F1EFFF;--mu:#A29EC9;--ac:#FF5B77;--ac2:#46D3E0;--ln:#37306B;--ok:#4BD28F}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Tajawal',system-ui,sans-serif;font-size:16px;line-height:1.6;padding-bottom:90px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header{padding:22px 0 8px}
+h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.5px}
+h1 span{color:var(--ac)}
+header p{margin:2px 0 0;color:var(--mu)}
+nav{display:flex;gap:8px;margin:14px 0}
+nav button,.chip{font:inherit;border:1.5px solid var(--ln);background:var(--sf);color:var(--tx);padding:7px 16px;border-radius:99px;cursor:pointer}
+nav button[aria-selected=true],.chip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px}
+.chip{white-space:nowrap;padding:5px 14px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--sf);border:1.5px solid var(--ln);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.ico{font-size:44px;line-height:1;background:var(--bg);border-radius:12px;height:84px;display:grid;place-items:center;margin-bottom:6px}
+.card h3{margin:0;font-size:18px}
+.card small{color:var(--mu)}
+.price{font-weight:800;font-size:20px}
+.price em{font-style:normal;font-weight:400;font-size:13px;color:var(--mu)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.btn{font:inherit;font-weight:800;border:0;border-radius:10px;padding:9px 16px;background:var(--ac);color:#fff;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--tx);border:1.5px solid var(--ln)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+button:focus-visible,input:focus-visible{outline:3px solid var(--ac2);outline-offset:2px}
+.bar{position:fixed;inset-inline:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--sf);border-top:1.5px solid var(--ln)}
+.bar .row{max-width:760px;margin:auto}
+.ticket{background:var(--sf);border:1.5px solid var(--ln);border-radius:16px;padding:16px;margin-bottom:16px;border-inline-start:6px solid var(--ac)}
+.ticket hr{border:0;border-top:2px dashed var(--ln);margin:12px 0}
+.line{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0}
+.step{display:inline-flex;align-items:center;gap:8px}
+.step button{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ln);background:var(--bg);color:var(--tx);font:inherit;cursor:pointer}
+label{display:block;font-weight:500;margin:10px 0 4px}
+input{width:100%;font:inherit;padding:10px 12px;border-radius:10px;border:1.5px solid var(--ln);background:var(--bg);color:var(--tx)}
+.tot{font-size:22px;font-weight:800}
+.tag{font-size:13px;padding:2px 10px;border-radius:99px;background:var(--bg);color:var(--ac2);font-weight:500}
+.tag.done{color:var(--ok)}
+.empty{text-align:center;color:var(--mu);padding:40px 0}
+.toast{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));inset-inline:16px;margin:auto;max-width:360px;background:var(--ok);color:#fff;padding:12px 16px;border-radius:12px;text-align:center;font-weight:800;z-index:9}
+[hidden]{display:none!important}
+.sr{margin:0 0 12px}.sr input{border-radius:99px;padding:10px 16px}</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>جير<span>.</span></h1><p>استأجر أجهزة وملحقات الألعاب بالأيام</p></header>
+<nav role="tablist">
+<button role="tab" id="t-shop" aria-selected="true">المعروضات</button>
+<button role="tab" id="t-cart" aria-selected="false">سلة الحجز</button>
+<button role="tab" id="t-book" aria-selected="false">حجوزاتي</button>
+</nav>
+<div class="sr" id="sr"><input id="q" type="search" placeholder="ابحث عن منتج، مثل: بلايستيشن" aria-label="بحث عن منتج"></div>
+<main id="app"></main>
+</div>
+<div class="bar" id="bar" hidden><div class="row"><div><small style="color:var(--mu)" id="bc"></small><div class="tot" id="bt"></div></div><button class="btn" id="go">راجع الحجز</button></div></div>
+<script>
+var CUR='ر.ع';
+var ITEMS=[
+{id:1,n:'بلايستيشن 5',c:'أجهزة',i:'🎮',p:5,s:3,d:'مع يدّتين ولعبتين'},
+{id:9,n:'بلايستيشن 5 ديجيتال',c:'أجهزة',i:'🎮',p:4,s:2,d:'بدون قرص، مع يدّة'},
+{id:2,n:'إكس بوكس سيريس X',c:'أجهزة',i:'🕹️',p:4.5,s:2,d:'مع يدّة وGame Pass'},
+{id:10,n:'إكس بوكس سيريس S',c:'أجهزة',i:'🕹️',p:3.5,s:3,d:'مع يدّة وGame Pass'},
+{id:3,n:'نينتندو سويتش OLED',c:'أجهزة',i:'👾',p:3,s:4,d:'محمول، مع حقيبة'},
+{id:4,n:'يدّة إكس بوكس',c:'يدّات',i:'🎮',p:1,s:6,d:'لاسلكية، تعمل مع إكس بوكس والكمبيوتر'},
+{id:11,n:'يدّة بلايستيشن 5 DualSense',c:'يدّات',i:'🎮',p:1,s:8,d:'يدّة سوني 5 الأصلية'},
+{id:12,n:'يدّة بلايستيشن 5 DualSense Edge',c:'يدّات',i:'🎮',p:2,s:3,d:'احترافية بأزرار قابلة للتخصيص'},
+{id:5,n:'نظارة VR كويست 3',c:'واقع افتراضي',i:'🥽',p:6,s:2,d:'مع يدّتين وشاحن'},
+{id:6,n:'سماعة ألعاب لاسلكية',c:'ملحقات',i:'🎧',p:1.5,s:5,d:'صوت محيطي 7.1'},
+{id:7,n:'كرسي قيمنق',c:'ملحقات',i:'💺',p:2,s:3,d:'قابل للتعديل'},
+{id:8,n:'شاشة 27 بوصة 144Hz',c:'ملحقات',i:'🖥️',p:3,s:3,d:'مناسبة للأجهزة والكمبيوتر'}
+,
+{id:13,n:'غطاء سيليكون ليدّة PS5',c:'للبيع',i:'🧤',p:1.5,s:12,d:'حماية من الخدوش والسقوط'},
+{id:14,n:'كابل شحن USB-C (2 متر)',c:'للبيع',i:'🔌',p:2,s:15,d:'يناسب يدّات PS5 وسويتش'},
+{id:15,n:'قاعدة شحن ليدّتين PS5',c:'للبيع',i:'🔋',p:6,s:6,d:'شحن سريع بدون كابل'},
+{id:16,n:'أغطية عصا التحكم (4 قطع)',c:'للبيع',i:'🕹️',p:1.5,s:20,d:'تثبيت أفضل وراحة أكثر'},
+{id:17,n:'سماعة ألعاب سلكية',c:'للبيع',i:'🎧',p:5,s:8,d:'مايك مدمج، توصيل 3.5 مم'},
+{id:18,n:'حقيبة حمل نينتندو سويتش',c:'للبيع',i:'🎒',p:4,s:7,d:'صلبة مع مساحة للألعاب'},
+{id:19,n:'واقي شاشة نينتندو سويتش',c:'للبيع',i:'🛡️',p:1.5,s:15,d:'زجاج مقوّى'}
+];
+var DEP={1:20,9:18,2:20,10:15,3:15,4:5,11:5,12:8,5:30,6:6,7:10,8:15};
+var CATS=['الكل','أجهزة','يدّات','واقع افتراضي','ملحقات','للبيع'];
+var st={q:'',tab:'shop',cat:'الكل',cart:{},days:{},bookings:[]};
+try{var b=localStorage.getItem('gear-bookings');if(b)st.bookings=JSON.parse(b)}catch(e){}
+function save(){try{localStorage.setItem('gear-bookings',JSON.stringify(st.bookings))}catch(e){}}
+var $=function(s){return document.querySelector(s)};
+function item(id){return ITEMS.filter(function(x){return x.id==id})[0]}
+function reserved(id){var n=0;st.bookings.forEach(function(b){if(b.status==='active'||(item(id).c==='للبيع'&&b.status!=='cancelled'))b.lines.forEach(function(l){if(l.id==id)n+=l.q})});return n}
+function avail(id){return item(id).s-reserved(id)}
+function total(){var t=0,q=0,g=0;for(var id in st.cart){t+=st.cart[id]*item(id).p*(item(id).c==='للبيع'?1:(st.days[id]||1));q+=st.cart[id];g+=st.cart[id]*(DEP[id]||0)}return{t:t,q:q,g:g}}
+function toast(m){var e=document.createElement('div');e.className='toast';e.textContent=m;document.body.appendChild(e);setTimeout(function(){e.remove()},2200)}
+function tab(t){st.tab=t;['shop','cart','book'].forEach(function(k){$('#t-'+k).setAttribute('aria-selected',k===t)});render()}
+function add(id){var a=avail(id),c=st.cart[id]||0;if(c>=a)return toast('لا توجد كمية أخرى متاحة');st.cart[id]=c+1;st.days[id]=st.days[id]||1;render()}
+function chg(id,d){var c=(st.cart[id]||0)+d;if(c<=0)delete st.cart[id];else if(c<=avail(id))st.cart[id]=c;render()}
+function dys(id,d){st.days[id]=Math.max(1,Math.min(30,(st.days[id]||1)+d));render()}
+function render(){
+var T=total(),h='';
+$('#sr').hidden=st.tab!=='shop';
+$('#bar').hidden=!(st.tab==='shop'&&T.q);
+$('#bc').textContent=T.q+' قطع · شامل العربون';$('#bt').textContent=(T.t+T.g)+' '+CUR;
+if(st.tab==='shop'){
+h+='<div class="chips">'+CATS.map(function(c){return '<button class="chip'+(c===st.cat?' on':'')+'" data-cat="'+c+'">'+c+'</button>'}).join('')+'</div><div class="grid">';
+var L=ITEMS.filter(function(x){return (st.cat==='الكل'||x.c===st.cat)&&(x.n+' '+x.d+' '+x.c).toLowerCase().indexOf(st.q.toLowerCase())>-1});
+if(!L.length)h+='<div class="empty" style="grid-column:1/-1">لا توجد نتائج لـ «'+esc(st.q)+'». جرّب كلمة أخرى.</div>';
+L.forEach(function(x){
+var a=avail(x.id);
+h+='<div class="card"><div class="ico">'+x.i+'</div><h3>'+x.n+'</h3><small>'+x.d+'</small><div class="row" style="margin-top:6px"><div class="price">'+x.p+' <em>'+CUR+(x.c==='للبيع'?'':' / يوم')+'</em></div></div>'+(x.c==='للبيع'?'<small style="color:var(--ac2)">للبيع</small>':'<small>عربون مسترد: '+DEP[x.id]+' '+CUR+'</small>')+'<div class="row" style="margin-top:6px"><small>'+(a>0?'متاح: '+a:'غير متاح حالياً')+'</small><button class="btn" data-add="'+x.id+'"'+(a<1||(st.cart[x.id]||0)>=a?' disabled':'')+'>أضف'+(st.cart[x.id]?' ('+st.cart[x.id]+')':'')+'</button></div></div>'});
+h+='</div>'}
+if(st.tab==='cart'){
+var ids=Object.keys(st.cart);
+if(!ids.length)h='<div class="empty">السلة فارغة. اختر من المعروضات ما تريد استئجاره.</div>';
+else{
+h+='<div class="ticket">';
+ids.forEach(function(id){var x=item(id);
+h+='<div class="line"><div><b>'+x.i+' '+x.n+'</b><br><small>'+x.p+' '+CUR+(x.c==='للبيع'?' · للبيع':' / يوم')+'</small></div><div><div class="step">الكمية <button data-q="'+id+'" data-d="-1" aria-label="أنقص">−</button>'+st.cart[id]+'<button data-q="'+id+'" data-d="1" aria-label="زِد">+</button></div>'+(x.c==='للبيع'?'':'<br><div class="step">الأيام <button data-y="'+id+'" data-d="-1" aria-label="أنقص">−</button>'+st.days[id]+'<button data-y="'+id+'" data-d="1" aria-label="زِد">+</button></div>')+'</div></div>'});
+h+='<hr><div class="line"><span>الإيجار والمشتريات</span><span>'+T.t+' '+CUR+'</span></div><div class="line"><span>العربون (يُسترد)</span><span>'+T.g+' '+CUR+'</span></div><div class="row"><b>المطلوب دفعه</b><span class="tot">'+(T.t+T.g)+' '+CUR+'</span></div><small style="color:var(--mu)">العربون على المؤجَّر فقط. العربون لضمان سلامة المنتجات، ويُسترد كاملاً عند إرجاعها سليمة في الموعد.</small></div>';
+var d=new Date().toISOString().slice(0,10);
+h+='<div class="ticket"><b>بيانات الحجز</b><label for="nm">الاسم</label><input id="nm" autocomplete="name"><label for="ph">رقم الجوال</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel"><label for="dt">تاريخ الاستلام</label><input id="dt" type="date" min="'+d+'" value="'+d+'"><br><br><button class="btn" id="conf" style="width:100%">تأكيد الطلب</button></div>'}}
+if(st.tab==='book'){
+if(!st.bookings.length)h='<div class="empty">لا توجد حجوزات بعد.</div>';
+st.bookings.slice().reverse().forEach(function(b){
+h+='<div class="ticket"><div class="row"><b>'+esc(b.name)+'</b><span class="tag'+(b.status!=='active'?' done':'')+'">'+(b.status==='active'?'قيد التأجير':b.status==='returned'?'تم الإرجاع – العربون مُسترد':b.status==='damaged'?'ضرر – العربون محتجز':'ملغي')+'</span></div><small>'+esc(b.phone)+' · استلام '+b.date+'</small><hr>';
+b.lines.forEach(function(l){h+='<div class="line"><span>'+item(l.id).i+' '+item(l.id).n+' × '+l.q+'</span><span>'+(item(l.id).c==='للبيع'?'شراء':l.days+' يوم')+'</span></div>'});
+h+='<hr><div class="line"><span>الإيجار والمشتريات</span><span>'+b.total+' '+CUR+'</span></div><div class="line"><span>العربون</span><span>'+(b.dep||0)+' '+CUR+'</span></div><div class="row" style="flex-wrap:wrap"><b>'+(b.total+(b.dep||0))+' '+CUR+'</b>'+(b.status==='active'?'<span><button class="btn ghost" data-ret="'+b.ref+'">إرجاع سليم</button> <button class="btn ghost" data-dmg="'+b.ref+'">إرجاع مع ضرر</button> <button class="btn ghost" data-can="'+b.ref+'">إلغاء</button></span>':'')+'</div></div>'});}
+$('#app').innerHTML=h}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+document.addEventListener('click',function(e){
+var t=e.target.closest('button');if(!t)return;
+if(t.id==='t-shop')tab('shop');else if(t.id==='t-cart')tab('cart');else if(t.id==='t-book')tab('book');
+else if(t.id==='go')tab('cart');
+else if(t.dataset.cat){st.cat=t.dataset.cat;render()}
+else if(t.dataset.add)add(t.dataset.add);
+else if(t.dataset.q)chg(t.dataset.q,+t.dataset.d);
+else if(t.dataset.y)dys(t.dataset.y,+t.dataset.d);
+else if(t.dataset.ret||t.dataset.can||t.dataset.dmg){var r=t.dataset.ret||t.dataset.can||t.dataset.dmg;st.bookings.forEach(function(b){if(b.ref==r)b.status=t.dataset.ret?'returned':t.dataset.dmg?'damaged':'cancelled'});save();render()}
+else if(t.id==='conf'){
+var n=$('#nm').value.trim(),p=$('#ph').value.trim();
+if(!n||p.length<7)return toast('أدخل الاسم ورقم جوال صحيح');
+var lines=Object.keys(st.cart).map(function(id){return{id:+id,q:st.cart[id],days:st.days[id]}});
+st.bookings.push({ref:Date.now(),name:n,phone:p,date:$('#dt').value,lines:lines,total:total().t,dep:total().g,status:'active'});
+st.cart={};st.days={};save();toast('تم تأكيد الحجز ✓');tab('book')}
+});
+$('#q').addEventListener('input',function(e){st.q=e.target.value.trim();render()});
+render();
+</script>
+</body>
+</html>
