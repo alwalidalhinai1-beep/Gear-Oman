@@ -24,7 +24,7 @@ h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.5px}
 h1 span{color:var(--ac)}
 header p{margin:2px 0 0;color:var(--mu)}
 nav{display:flex;gap:8px;margin:14px 0}
-nav button{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}@media(max-width:430px){nav button{padding:7px 11px!important;gap:5px;font-size:14px}nav button .ti{width:16px;height:16px}}nav button .ti{flex:none;opacity:.9}nav button,.chip{font:inherit;border:1.5px solid var(--ln);background:var(--sf);color:var(--tx);padding:7px 16px;border-radius:99px;cursor:pointer}
+.rnote{margin-top:10px;font-size:13px;opacity:.85;line-height:1.7}.rnote a{color:#25d366;font-weight:700;text-decoration:none;white-space:nowrap}nav button{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}@media(max-width:430px){nav button{padding:7px 11px!important;gap:5px;font-size:14px}nav button .ti{width:16px;height:16px}}nav button .ti{flex:none;opacity:.9}nav button,.chip{font:inherit;border:1.5px solid var(--ln);background:var(--sf);color:var(--tx);padding:7px 16px;border-radius:99px;cursor:pointer}
 nav button[aria-selected=true],.chip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px}
 .chip{white-space:nowrap;padding:5px 14px;font-size:14px}
@@ -107,7 +107,7 @@ note:'العربون على المؤجَّر فقط. العربون لضمان �
 det:'بيانات الحجز',nm:'الاسم',phn:'رقم الجوال',dt:'تاريخ الاستلام',conf:'تأكيد وإرسال عبر واتساب',bad:'أدخل الاسم ورقم جوال صحيح',
 ok:'تم تسجيل الطلب ✓ أكمل الإرسال في واتساب',nob:'لا توجد حجوزات بعد.',
 st:{active:'قيد التأجير',returned:'تم الإرجاع – العربون مُسترد',damaged:'ضرر – العربون محتجز',cancelled:'ملغي'},
-pick:'استلام ',buy:'شراء',dayN:function(n){return n+' يوم'},sendWa:'إرسال واتساب',ret:'إرجاع سليم',dmg:'إرجاع مع ضرر',can:'إلغاء',depo:'العربون',
+pick:'استلام ',buy:'شراء',dayN:function(n){return n+' يوم'},sendWa:'إرسال واتساب',ret:'إرجاع سليم',dmg:'إرجاع مع ضرر',retNote:'للإرجاع، أو إذا حصل ضرر في أي منتج، تواصل معنا عبر واتساب.',retWa:'تواصل معنا',retMsg:'السلام عليكم، بخصوص الإرجاع أو ضرر في طلبي رقم ',can:'إلغاء',depo:'العربون',
 inq:'السلام عليكم، عندي استفسار',inq2:'السلام عليكم، عندي استفسار عن التأجير',waAria:'تواصل معنا عبر واتساب',
 cats:{'الكل':'الكل','أجهزة':'أجهزة','أجهزة تحكم':'أجهزة تحكم','واقع افتراضي':'واقع افتراضي','ملحقات':'ملحقات','للبيع':'للبيع'}},
 en:{title:'Gear – Gaming Gear Rentals',desc:'Gear: rent PlayStation 5, Xbox, Nintendo Switch, controllers, VR headsets and gaming accessories by the day in Oman.',
@@ -121,7 +121,7 @@ note:'The deposit applies to rentals only. It protects the equipment and is full
 det:'Booking details',nm:'Name',phn:'Mobile number',dt:'Pickup date',conf:'Confirm & send via WhatsApp',bad:'Enter your name and a valid mobile number',
 ok:'Order saved ✓ finish sending in WhatsApp',nob:'No bookings yet.',
 st:{active:'Rented out',returned:'Returned – deposit refunded',damaged:'Damaged – deposit withheld',cancelled:'Cancelled'},
-pick:'Pickup ',buy:'Purchase',dayN:function(n){return n+(n>1?' days':' day')},sendWa:'Send WhatsApp',ret:'Returned OK',dmg:'Returned damaged',can:'Cancel',depo:'Deposit',
+pick:'Pickup ',buy:'Purchase',dayN:function(n){return n+(n>1?' days':' day')},sendWa:'Send WhatsApp',ret:'Returned OK',dmg:'Returned damaged',retNote:'For returns, or if anything gets damaged, contact us on WhatsApp.',retWa:'Contact us',retMsg:'Hello, about a return or damage for my order number ',can:'Cancel',depo:'Deposit',
 inq:'Hello, I have an inquiry',inq2:'Hello, I have a question about renting',waAria:'Chat with us on WhatsApp',
 cats:{'الكل':'All','أجهزة':'Consoles','أجهزة تحكم':'Controllers','واقع افتراضي':'VR','ملحقات':'Accessories','للبيع':'For sale'}}
 };
@@ -236,7 +236,7 @@ if(!st.bookings.length)h='<div class="empty">'+t.nob+'</div>';
 st.bookings.slice().reverse().forEach(function(b){
 h+='<div class="ticket"><div class="row"><b>'+esc(b.name)+'</b><span class="tag'+(b.status!=='active'?' done':'')+'">'+(t.st[b.status]||t.st.cancelled)+'</span></div><small>'+esc(b.phone)+' · '+t.pick+b.date+'</small><hr>';
 b.lines.forEach(function(l){var x=item(l.id);h+='<div class="line"><span>'+x.i+' '+nm(x)+' × '+l.q+'</span><span>'+(x.c==='للبيع'?t.buy:t.dayN(l.days))+'</span></div>'});
-h+='<hr><div class="line"><span>'+t.rent+'</span><span>'+b.total+' '+CUR+'</span></div><div class="line"><span>'+t.depo+'</span><span>'+(b.dep||0)+' '+CUR+'</span></div><div class="row" style="flex-wrap:wrap"><b>'+(b.total+(b.dep||0))+' '+CUR+'</b>'+(b.status==='active'?'<span><button class="btn ghost" data-wa="'+b.ref+'">'+t.sendWa+'</button> <button class="btn ghost" data-ret="'+b.ref+'">'+t.ret+'</button> <button class="btn ghost" data-dmg="'+b.ref+'">'+t.dmg+'</button> <button class="btn ghost" data-can="'+b.ref+'">'+t.can+'</button></span>':'')+'</div></div>'});}
+h+='<hr><div class="line"><span>'+t.rent+'</span><span>'+b.total+' '+CUR+'</span></div><div class="line"><span>'+t.depo+'</span><span>'+(b.dep||0)+' '+CUR+'</span></div><div class="row" style="flex-wrap:wrap"><b>'+(b.total+(b.dep||0))+' '+CUR+'</b>'+(b.status==='active'?'<span><button class="btn ghost" data-wa="'+b.ref+'">'+t.sendWa+'</button> <button class="btn ghost" data-can="'+b.ref+'">'+t.can+'</button></span>':'')+'</div>'+(b.status==='active'?'<div class="rnote">'+t.retNote+' <a href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(t.retMsg+String(b.ref).slice(-6))+'" target="_blank" rel="noopener">'+t.retWa+'</a></div>':'')+'</div>'});}
 $('#app').innerHTML=h}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 document.addEventListener('click',function(e){
